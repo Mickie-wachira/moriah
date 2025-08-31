@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Church Homepage</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* Background with blur */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('church.jpg') no-repeat center center/cover;
+      filter: blur(3px);
+      z-index: -1;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav .logo img {
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+      position: relative;
+    }
+
+    nav ul li a, .dropdown-btn {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    nav ul li a:hover, .dropdown-btn:hover {
+      color: #FFD700;
+    }
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background: rgba(0,0,0,0.9);
+      min-width: 150px;
+      border-radius: 6px;
+      overflow: hidden;
+      z-index: 1001;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background: #FFD700;
+      color: black;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Hero / main content */
+    .hero {
+      margin-top: 100px; /* Space for navbar */
+      text-align: center;
+      padding: 40px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 4px black;
+    }
+
+    /* Contribution highlight */
+    .contribution-section {
+      background: rgba(255, 215, 0, 0.15);
+      border: 2px solid #FFD700;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 12px;
+      width: 80%;
+      text-align: center;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .contribution-section h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #FFD700;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    .contribution-section p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .contribution-section a {
+      display: inline-block;
+      background: #FFD700;
+      color: black;
+      font-weight: bold;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+      margin: 5px;
+    }
+
+    .contribution-section a:hover {
+      background: #FFC107;
+      transform: scale(1.05);
+    }
+
+    /* Other sections */
+    .section {
+      background: rgba(0, 0, 0, 0.6);
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      text-align: center;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="church.jpg" alt="Church Logo">
+      My Church
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contributions.html">Contributions</a></li>
+      <li class="dropdown">
+        <span class="dropdown-btn">Account ▾</span>
+        <div class="dropdown-content">
+          <a href="login.html">Login</a>
+          <a href="register.html">Register</a>
+          <a href="admin.html">Admin Login</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="hero">
+    <h1>Welcome to FGCK Mt Moriah Branch</h1>
+    <p>"For where two or three gather in my name, there am I with them." - Matthew 18:20</p>
+  </div>
+
+  <!-- Aim / Contribution Highlight -->
+  <div class="contribution-section">
+    <h2>Our Aim: Contribution</h2>
+    <p>Together, we are building the house of God. You can contribute by sharing messages, verses, images, or by supporting church projects.</p>
+    <a href="contributions.html">Contribute Now</a>
+    <a href="progress.html">See Progress</a>
+  </div>
+
+  <!-- Sections (kept from your template) -->
+  <div class="section">
+    <h2>Latest Message</h2>
+    <p>Join us in celebrating God’s love and grace. Our community is growing in faith together.</p>
+  </div>
+
+  <div class="section">
+    <h2>Upcoming Event</h2>
+    <p>Sunday Service - 10:00 AM</p>
+  </div>
+
+  <div class="section">
+    <h2>Daily Verse</h2>
+    <p>"The Lord is my shepherd; I shall not want." - Psalm 23:1</p>
+  </div>
+
+  <!-- Extra: Mission / Purpose -->
+  <div class="section">
+    <h2>Our Mission</h2>
+    <p>To spread the Gospel, nurture faith, and build a strong Christian community dedicated to love, service, and worship.</p>
+  </div>
+
+  <!-- Extra: Favorite Verses -->
+  <div class="section">
+    <h2>Favorite Bible Verses</h2>
+    <p><strong>John 3:16</strong> - For God so loved the world that He gave His one and only Son...</p>
+    <p><strong>Philippians 4:13</strong> - I can do all things through Christ who strengthens me.</p>
+    <p><strong>Psalm 23:1</strong> - The Lord is my shepherd; I shall not want.</p>
+  </div>
+
+  <!-- Extra: Purpose -->
+  <div class="section">
+    <h2>Why This Website?</h2>
+    <p>This website serves as a digital sanctuary for Mt. Moriah Church members and the wider community. It allows us to share updates, church programs, progress on our development, and provide a way for everyone to contribute and stay connected.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My Church. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

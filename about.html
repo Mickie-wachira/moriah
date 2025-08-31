@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | FGCK Mt. Moriah Branch</title>
+  <style>
+    :root{
+      --gold:#FFD700;
+      --deep:#1f2937;
+      --ink:#111827;
+      --light:#f7f7f8;
+      --accent:#0ea5e9;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --green:#16a34a;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--light);color:#222;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+
+    /* Navbar */
+    nav{
+      position:fixed;top:0;left:0;width:100%;
+      background:rgba(0,0,0,.7);backdrop-filter:saturate(140%) blur(6px);
+      color:#fff;z-index:1000;padding:12px 28px;
+      display:flex;align-items:center;justify-content:space-between
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+    .nav-links{display:flex;gap:18px;font-weight:600}
+    .nav-links a:hover{color:var(--gold)}
+
+    /* Hero */
+    .hero{
+      margin-top:72px;
+      min-height:46vh;
+      display:grid;place-items:center;
+      text-align:center;color:#fff;position:relative;
+      background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.6)),url('/frontend/images/download.jpg') center/cover no-repeat;
+      padding:48px 20px;
+    }
+    .hero h1{font-size:2.4rem;letter-spacing:.5px;margin-bottom:10px;text-shadow:0 3px 14px rgba(0,0,0,.6)}
+    .hero p{opacity:.95}
+    .hero .tag{margin-top:14px;display:inline-block;background:rgba(255,215,0,.15);border:1px solid var(--gold);color:#fff;padding:6px 12px;border-radius:999px;font-weight:700}
+
+    /* Containers & sections */
+    .container{max-width:1200px;margin:0 auto;padding:34px 20px}
+    h2.section-title{
+      font-size:1.6rem;margin-bottom:14px;color:var(--ink);
+      border-left:6px solid var(--gold);padding-left:10px
+    }
+    .muted{color:var(--muted)}
+
+    /* About + Purpose + Location */
+    .grid-2{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:22px
+    }
+    .card{
+      background:var(--card);border-radius:14px;padding:22px;
+      box-shadow:0 8px 20px rgba(0,0,0,.06)
+    }
+    .card h3{margin-bottom:10px}
+    .pill{display:inline-block;margin:.25rem .25rem 0 0;padding:6px 10px;border-radius:999px;background:#eef6ff;color:#0b61aa;font-weight:700;font-size:.86rem}
+
+    .location-list{list-style:none;margin-top:8px}
+    .location-list li{display:flex;gap:8px;align-items:flex-start;margin:6px 0}
+    .map{
+      margin-top:12px;border:none;width:100%;height:220px;border-radius:12px;
+      box-shadow:0 6px 16px rgba(0,0,0,.08)
+    }
+
+    /* Leadership */
+    .leaders{
+      display:grid;gap:16px;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr))
+    }
+    .leader{
+      background:#fff;border-radius:14px;padding:18px;text-align:center;
+      box-shadow:0 6px 16px rgba(0,0,0,.07);transition:transform .2s, box-shadow .2s
+    }
+    .leader:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(0,0,0,.12)}
+    .leader img{width:96px;height:96px;border-radius:50%;object-fit:cover;margin-bottom:10px;border:3px solid #eee}
+    .role{font-weight:800;margin-top:4px}
+    .leader small{color:var(--muted)}
+
+    /* Services */
+    .services{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .service{
+      background:#fff;border-left:6px solid var(--green);
+      border-radius:10px;padding:14px 16px;box-shadow:0 6px 16px rgba(0,0,0,.06)
+    }
+    .service h4{margin-bottom:4px}
+
+    /* Verses */
+    .verses{
+      display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))
+    }
+    .verse{
+      background:linear-gradient(135deg,var(--gold),#e8c45a);
+      color:#111;border-radius:14px;padding:18px;box-shadow:0 10px 24px rgba(0,0,0,.15)
+    }
+    .verse blockquote{font-style:italic}
+    .verse cite{display:block;margin-top:8px;font-weight:800}
+
+    /* Callout */
+    .callout{
+      background:#0b1220;color:#e8edf7;border-radius:16px;padding:22px;
+      display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between
+    }
+    .btn{
+      display:inline-block;background:var(--gold);color:#111;font-weight:800;
+      padding:10px 16px;border-radius:10px;border:2px solid rgba(0,0,0,.2)
+    }
+    .btn:hover{filter:brightness(1.05)}
+
+    /* Footer */
+    footer{background:#111;color:#b8b8b8;text-align:center;padding:22px;margin-top:28px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .grid-2{grid-template-columns:1fr}
+      .hero h1{font-size:2rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="brand">
+      <img src="images/logo.png" alt="FGCK Mt. Moriah Logo">
+      <div>FGCK Mt. Moriah Branch</div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contributions.html">Contribute</a>
+      <a href="admin.html">Admin</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div>
+      <h1>About Mt. Moriah Branch</h1>
+      <p>Full Gospel Churches of Kenya • Murungai Village, Umande Ward, Nanyuki, Laikipia County</p>
+      <span class="tag">“For where two or three gather in my name, there am I with them.” — Matthew 18:20</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Purpose + Story + Location -->
+    <section class="grid-2">
+      <article class="card">
+        <h2 class="section-title">Our Story & Purpose</h2>
+        <p>
+          Mt. Moriah Branch is a vibrant church family under the Full Gospel Churches of Kenya (FGCK).
+          We exist to share the Gospel of Christ, build strong families, and transform our community through worship, teaching, and service.
+        </p>
+        <div style="margin:10px 0 6px;font-weight:800">Purpose of this Website</div>
+        <ul class="location-list">
+          <li>• Mobilize <strong>contributions</strong> in Ksh for church construction and community projects.</li>
+          <li>• Show <strong>live progress updates</strong> of the construction (photos, milestones, percentages).</li>
+          <li>• Share <strong>messages & Bible verses</strong> from our leadership on the homepage.</li>
+          <li>• Optionally <strong>recognize top contributors</strong> and testimonies (with consent).</li>
+        </ul>
+        <div style="margin-top:10px">
+          <span class="pill">Faith</span>
+          <span class="pill">Community</span>
+          <span class="pill">Accountability</span>
+          <span class="pill">Transparency</span>
+        </div>
+      </article>
+
+      <aside class="card">
+        <h2 class="section-title">Find Us</h2>
+        <ul class="location-list">
+          <li><strong>County:</strong>&nbsp; Laikipia</li>
+          <li><strong>Town:</strong>&nbsp; Nanyuki</li>
+          <li><strong>Ward:</strong>&nbsp; Umande</li>
+          <li><strong>Village:</strong>&nbsp; Murungai</li>
+          <li><strong>Denomination:</strong>&nbsp; Full Gospel Churches of Kenya (FGCK)</li>
+        </ul>
+        <!-- Map placeholder (replace q= with your precise map link if you like) -->
+        <iframe
+          class="map"
+          src="https://www.google.com/maps?q=Murungai%20Village%20Umande%20Ward%20Nanyuki%20Laikipia&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map to Mt. Moriah Branch">
+        </iframe>
+      </aside>
+    </section>
+
+    <!-- Leadership -->
+    <section class="container" style="padding-left:0;padding-right:0">
+      <h2 class="section-title">Our Leadership</h2>
+      <div class="leaders">
+        <div class="leader">
+          <img src="images/bishop.jpg" alt="Bishop Anthony Miano">
+          <div class="role">Bishop Anthony Miano</div>
+          <small>Overseer – FGCK</small>
+        </div>
+        <div class="leader">
+          <img src="images/reverend.jpg" alt="Reverend Kibira">
+          <div class="role">Reverend Kibira</div>
+          <small>Resident Minister</small>
+        </div>
+        <div class="leader">
+          <img src="images/pastor.jpg" alt="Pastor Ndegwa">
+          <div class="role">Pastor Ndegwa</div>
+          <small>Youth & Outreach</small>
+        </div>
+        <div class="leader">
+          <img src="images/chairman.jpg" alt="Church Chairman">
+          <div class="role">Church Chairman</div>
+          <small>Leadership Board</small>
+        </div>
+        <div class="leader">
+          <img src="images/elder.jpg" alt="dicon">
+          <div class="role">Michael Kahuthu</div>
+          <small>Spiritual Guidance</small>
+        </div>
+        <div class="leader">
+          <img src="images/youth.jpg" alt="Youth Leader">
+          <div class="role">Stanley Gashungi</div>
+          <small>Next Generation</small>
+        </div>
+        <div class="leader">
+          <img src="images/women.jpg" alt="Women Leader">
+          <div class="role">Women Leader</div>
+          <small>Women’s Ministry</small>
+        </div>
+        <div class="leader">
+          <img src="images/treasurer.jpg" alt="Treasurer">
+          <div class="role">Treasurer</div>
+          <small>Finance & Accountability</small>
+        </div>
+        <div class="leader">
+          <img src="images/choir.jpg" alt="Choir Leader">
+          <div class="role">Choir Leader</div>
+          <small>Praise & Worship</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="container" style="padding-left:0;padding-right:0">
+      <h2 class="section-title">Church Services</h2>
+      <div class="services">
+        <div class="service">
+          <h4>Sunday Service</h4>
+          <div class="muted">10:00 AM – 1:00 PM</div>
+          <div>Main worship & sermon</div>
+        </div>
+        <div class="service">
+          <h4>Wednesday Bible Study</h4>
+          <div class="muted">5:00 PM – 7:00 PM</div>
+          <div>Word, discipleship & fellowship</div>
+        </div>
+        <div class="service">
+          <h4>Friday Prayer Meeting</h4>
+          <div class="muted">6:00 PM – 8:00 PM</div>
+          <div>Corporate prayer & intercession</div>
+        </div>
+        <div class="service">
+          <h4>Saturday Youth Fellowship</h4>
+          <div class="muted">3:00 PM – 5:00 PM</div>
+          <div>Teens & youth empowerment</div>
+        </div>
+        <div class="service">
+          <h4>Saturday Choir Practice</h4>
+          <div class="muted">2:00 PM – 4:00 PM</div>
+          <div>Worship team rehearsal</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Favourite Bible Verses -->
+    <section class="container" style="padding-left:0;padding-right:0">
+      <h2 class="section-title">Favourite Bible Verses</h2>
+      <div class="verses">
+        <div class="verse">
+          <blockquote>“The Lord is my shepherd; I shall not want.”</blockquote>
+          <cite>— Psalm 23:1</cite>
+        </div>
+        <div class="verse">
+          <blockquote>“I can do all things through Christ who strengthens me.”</blockquote>
+          <cite>— Philippians 4:13</cite>
+        </div>
+        <div class="verse">
+          <blockquote>“For God so loved the world that He gave His one and only Son…”</blockquote>
+          <cite>— John 3:16</cite>
+        </div>
+        <div class="verse">
+          <blockquote>“Give, and it will be given to you…”</blockquote>
+          <cite>— Luke 6:38</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="container" style="padding-left:0;padding-right:0">
+      <div class="callout">
+        <div>
+          <strong>Together we build.</strong>
+          <div class="muted">Be part of the vision. Your support helps us complete the church construction and reach more souls.</div>
+        </div>
+        <a class="btn" href="contributions.html">Contribute Now</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 FGCK Mt. Moriah Branch • Murungai, Umande Ward, Nanyuki, Laikipia County
+  </footer>
+
+</body>
+</html>

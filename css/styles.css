@@ -1,0 +1,47 @@
+/* Admin Panel */
+.form-section {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.form-section h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form input, form textarea, form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background: #3f51b5;
+  color: white;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #283593;
+}
+
+#adminResponse {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+}

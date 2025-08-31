@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Church Admin Panel</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>⛪ Church Admin Panel</h1>
+    <a href="index.html">🏠 Home</a>
+    <a href="contribute.html">✍️ Contributions</a>
+  </nav>
+
+  <section class="form-section">
+    <h2>Post Homepage Content</h2>
+    <form id="adminForm" enctype="multipart/form-data">
+      <label>Message:</label>
+      <textarea name="message" placeholder="Enter message for homepage"></textarea>
+
+      <label>Bible Verse:</label>
+      <input type="text" name="verse" placeholder="E.g. John 3:16">
+
+      <label>Upload Image:</label>
+      <input type="file" name="image" accept="image/*">
+
+      <button type="submit">Post to Homepage</button>
+    </form>
+
+    <p id="adminResponse"></p>
+  </section>
+
+  <script>
+    const form = document.getElementById("adminForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      const res = await fetch("http://localhost:5000/admin/update", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await res.json();
+      document.getElementById("adminResponse").innerText = data.message || "Something went wrong";
+    });
+  </script>
+</body>
+</html>
